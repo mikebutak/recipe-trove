@@ -1,0 +1,11 @@
+.app-container {
+    height: 100%;
+}
+
+.header-row {
+    height: 15%;
+}
+
+.body-row {
+    height: 85%;
+}
