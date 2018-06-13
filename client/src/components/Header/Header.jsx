@@ -8,7 +8,7 @@ const header = () => {
         //     <div className="col logo-col">Header logo here</div>
         //     <div className="col greeting-col">Greetings!</div>
         // </div>
-        <nav className="navbar navbar-dark bg-dark height">
+        <nav className="navbar navbar-dark bg-light header-size">
         <div className="container-fluid">
             <div className="navbar-header nav-wide">
                 <div className="row justify-content-end">
