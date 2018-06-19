@@ -13,7 +13,7 @@ const header = () => {
             <div className="navbar-header nav-wide">
                 <div className="row justify-content-end">
                     <div className="col">
-                        <a className="navbar-brand" href="http://www.helpfulhuman.com/">
+                        <a className="navbar-brand" href="https://www.myupside.com/">
                             <img src="https://cdn1.iconfinder.com/data/icons/food-drinks-1-1/128/silverware-512.png" alt="Chef's Hat" className="header-logo"/>
                         </a>
                     </div>
