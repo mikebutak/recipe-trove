@@ -1,0 +1,5 @@
+.card {
+    display: inline-flex;
+    width: 225px;
+    margin: 5px;
+}
