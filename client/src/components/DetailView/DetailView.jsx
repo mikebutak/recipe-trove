@@ -17,7 +17,7 @@ const detailView = (props) => {
             <div className="row imgRow">
                 <div className="col detail-gutter">
                 </div>
-                <div className="col focal-space">
+                <div className="col" id="imgCol">
                     <img className="detailImg" src="https://static1.squarespace.com/static/586d74a903596e659c26fbd4/t/5aefc5d8758d4670efb7c1bd/1525663217587/banana+bread.png" alt="Card image cap"/>
                 </div>
                     <div className="col detail-gutter">
@@ -33,6 +33,9 @@ const detailView = (props) => {
                     {ingredientList}
                 </div>
             </div>    
+            <div className="btn-row">
+                <button type="button" className="btn btn-secondary btn-style" onClick={props.clickHome}>Return To Main</button>
+            </div>
         </div>
     )
 }

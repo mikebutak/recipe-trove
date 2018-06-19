@@ -23,7 +23,6 @@ const addIngredNames = (recipes, ingredients) => {
 
 const recipeObj = addIngredNames(recipes, ingredients);
 
-
 class App extends Component {
     constructor(props) {
         super(props)
@@ -32,12 +31,19 @@ class App extends Component {
             recipes: null,
             focalRecipe: {}
         }
+        this.homeClickHandler=this.homeClickHandler.bind(this);
     }
 
     componentWillMount() {
         this.setState({
             recipes: recipeObj,
             focalRecipe: recipeObj[0]
+        })
+    }
+
+    homeClickHandler () {
+        this.setState({
+            view:'home'
         })
     }
 
@@ -62,6 +68,7 @@ class App extends Component {
             view = (
                 <DetailView 
                     recipe={this.state.focalRecipe}
+                    clickHome={this.homeClickHandler}
                 />
             )
         }

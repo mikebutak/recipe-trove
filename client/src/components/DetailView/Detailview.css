@@ -5,8 +5,9 @@
     padding-right: 10px;
 }
 
-.imgRow {
-    width:100%;
+#imgCol.detailImg {
+    background-size: 100% auto;
+    background: url(https://static1.squarespace.com/static/586d74a903596e659c26fbd4/t/5aefc5d8758d4670efb7c1bd/1525663217587/banana+bread.png)
 }
 
 .detailImg {
@@ -28,6 +29,8 @@
     padding-right: 0px;
 }
 
-.focal-space {
-    
+.btn-row {
+    display: flex;
+    justify-content: center;
+    background-color: green;
 }
