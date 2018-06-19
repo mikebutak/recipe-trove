@@ -1,0 +1,33 @@
+.detailView {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.imgRow {
+    width:100%;
+}
+
+.detailImg {
+    width: auto;
+    height: auto;
+}
+
+.descriptionRow {
+    width: 100%;
+}
+
+.ingredRow {
+    width: 100%;
+}
+
+.detail-gutter {
+    width: 10%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.focal-space {
+    
+}

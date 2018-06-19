@@ -1,0 +1,9 @@
+.ingredCol {
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+img.bullet {
+    width: 1.5%
+}

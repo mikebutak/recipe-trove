@@ -4,6 +4,7 @@ import './App.css';
 import Home from '../components/Home/Home';
 import recipes from '../../../database/seedData/receipeData';
 import ingredients from '../../../database/seedData/ingredientData';
+import DetailView from '../components/DetailView/DetailView';
 
 const addIngredNames = (recipes, ingredients) => {
     const ingredSummary = {};
@@ -27,19 +28,20 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            view: 'home',
-            recipes: null
+            view: 'detail',
+            recipes: null,
+            focalRecipe: {}
         }
     }
 
     componentWillMount() {
         this.setState({
-            recipes: recipeObj
+            recipes: recipeObj,
+            focalRecipe: recipeObj[0]
         })
     }
 
     render() {
-        console.log('recipe obj:', this.state.recipes);
         let temp = 'try this text';
 
         let view = (
@@ -48,6 +50,21 @@ class App extends Component {
                 ingredients={this.state.ingredients}
             />
         )
+
+        if (this.state.view === 'home') {
+            view = (
+                <Home 
+                    recipes={this.state.recipes}
+                    ingredients={this.state.ingredients}
+                />
+            )
+        } else if (this.state.view === 'detail') {
+            view = (
+                <DetailView 
+                    recipe={this.state.focalRecipe}
+                />
+            )
+        }
 
         return (
             <div className="app-container">
