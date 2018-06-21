@@ -22,19 +22,37 @@ exports.seed = function(knex, Promise) {
     return knex('ingredient').insert(ingredientData);
   })
   .then(() => {
-    return knex('recipe').insert(recipeData);
+    // return knex('recipe').insert(recipeData);
+    let recipePromises = [];
+    recipeData.forEach((recipe) => {
+      recipePromises.push(addRecipe(knex, recipe));
+    })
+    return Promise.all(recipePromises);
   })
   .then(() => {
     let recipe_ingredientPromises = [];
     recipeData.forEach((recipe) => {
       let ingredientList = recipe.ingredients;
       ingredientList.forEach((ingredient) => {
-        return knex('recipe_ingredient').insert({
-          recipe_id: recipe.id,
-          ingredient_id: ingredient.id,
-          qty: ingredient.quantity
-        });
+        recipe_ingredientPromises.push(addRecipe_ingredient(knex, recipe, ingredient));
       });
-    });
+    })
+    return Promise.all(recipe_ingredientPromises)
   });
 };
+
+const addRecipe = (knex, recipe) => {
+  return knex('recipe').insert({
+    id: recipe.id,
+    name: recipe.name,
+    description: recipe.description
+  })
+}
+
+const addRecipe_ingredient = (knex, recipe, ingredient) => {
+  return knex(`recipe-ingredient`).insert({
+    recipe_id: recipe.id,
+    ingredient_id: ingredient.id,
+    qty: ingredient.quantity
+  });
+}
