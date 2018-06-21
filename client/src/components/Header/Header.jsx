@@ -4,11 +4,7 @@ import './Header.css';
 const header = () => {
 
     return (
-        // <div className="row header-row">
-        //     <div className="col logo-col">Header logo here</div>
-        //     <div className="col greeting-col">Greetings!</div>
-        // </div>
-        <nav className="navbar navbar-dark bg-light header-size">
+        <nav className="navbar bg-dark w-100">
         <div className="container-fluid">
             <div className="navbar-header nav-wide">
                 <div className="row justify-content-end">
