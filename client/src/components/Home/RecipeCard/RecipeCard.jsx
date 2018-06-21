@@ -2,6 +2,7 @@ import React from 'react';
 import './RecipeCard.css';
 
 const recipeCard = (props) => {
+    console.log('props in recipeCard: ', props);
     let shortDescr = props.recipeData.description.slice(0, 50) +'...';
     return (
         <div className="card">
@@ -9,7 +10,7 @@ const recipeCard = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.recipeData.name}</h5>
                 <p className="card-text">{shortDescr}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <a href="#" className="btn btn-primary" id={props.recipeData.id} onClick={props.getDetails}>See Details</a>
             </div>
         </div>
     )

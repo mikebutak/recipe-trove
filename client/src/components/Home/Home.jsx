@@ -8,6 +8,7 @@ const home = (props) => {
         return <RecipeCard
             recipeData={recipe}
             key={recipe.id}
+            getDetails={props.getDetails}
         />
     })
 }
